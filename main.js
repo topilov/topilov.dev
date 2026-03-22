@@ -1,5 +1,15 @@
 lucide.createIcons();
 
+/** Real viewport height in px — WebKit often caches 100dvh / -webkit-fill-available after resize */
+function setViewportHeightUnit() {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+setViewportHeightUnit();
+window.addEventListener('resize', setViewportHeightUnit);
+window.addEventListener('orientationchange', () => {
+  setTimeout(setViewportHeightUnit, 50);
+});
+
 const modal = document.getElementById('contactsModal');
 const openBtn = document.getElementById('openContactsBtn');
 const closeBtn = document.getElementById('closeModalBtn');

@@ -18,27 +18,25 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--bg);
 }
 
 body {
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 20% 18%, rgba(255,255,255,0.10), transparent 20%),
-    radial-gradient(circle at 80% 24%, rgba(255,255,255,0.04), transparent 24%),
-    radial-gradient(circle at 55% 85%, rgba(255,255,255,0.03), transparent 28%),
+  /* Single paint layer (no fixed ::before) — avoids WebKit missing gradient invalidation after resize */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.10) 60%, rgba(0, 0, 0, 0.34) 100%),
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.10), transparent 20%),
+    radial-gradient(circle at 80% 24%, rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(circle at 55% 85%, rgba(255, 255, 255, 0.03), transparent 28%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  background-repeat: no-repeat;
+  background-size: auto;
   overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.10) 60%, rgba(0,0,0,0.34) 100%);
 }
 
 a {
@@ -54,9 +52,13 @@ button {
 .wrap {
   width: 100%;
   max-width: var(--max);
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   margin: 0 auto;
-  padding: 40px 28px;
+  padding:
+    max(40px, env(safe-area-inset-top, 0px))
+    max(28px, env(safe-area-inset-right, 0px))
+    max(40px, env(safe-area-inset-bottom, 0px))
+    max(28px, env(safe-area-inset-left, 0px));
   display: flex;
   align-items: center;
 }
@@ -191,8 +193,8 @@ a.btn-secondary {
 
 .signature {
   position: fixed;
-  left: 28px;
-  bottom: 24px;
+  left: calc(28px + env(safe-area-inset-left, 0px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   z-index: 1;
   color: rgba(255,255,255,0.42);
   font-size: 0.92rem;
@@ -206,7 +208,8 @@ a.btn-secondary {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: calc(20px + env(safe-area-inset-top, 0px)) calc(20px + env(safe-area-inset-right, 0px))
+    calc(20px + env(safe-area-inset-bottom, 0px)) calc(20px + env(safe-area-inset-left, 0px));
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.18s ease;
@@ -465,7 +468,11 @@ a.btn-secondary {
 
 @media (max-width: 700px) {
   .wrap {
-    padding: 24px 16px;
+    padding:
+      max(24px, env(safe-area-inset-top, 0px))
+      max(16px, env(safe-area-inset-right, 0px))
+      max(24px, env(safe-area-inset-bottom, 0px))
+      max(16px, env(safe-area-inset-left, 0px));
   }
 
   .hero-inner {
@@ -508,8 +515,8 @@ a.btn-secondary {
   }
 
   .signature {
-    left: 16px;
-    bottom: 16px;
+    left: calc(16px + env(safe-area-inset-left, 0px));
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
     font-size: 0.86rem;
   }
 }
