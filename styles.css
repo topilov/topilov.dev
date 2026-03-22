@@ -45,25 +45,33 @@ body {
 @media (hover: none) and (pointer: coarse) {
   html {
     background-image: none;
+    /* Bottom of gradient — fills any 1px gap vs pure #000 canvas under Safari chrome */
+    background-color: var(--bg2);
+    min-height: max(100lvh, calc(var(--vh, 1vh) * 100));
   }
 
   body {
     position: relative;
     isolation: isolate;
+    min-height: max(100lvh, calc(var(--vh, 1vh) * 100));
   }
 
   body::before {
     content: "";
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    right: 0;
+    width: 100%;
+    /* inset:0 uses small viewport; lvh/dvh + --vh covers strip above home indicator / toolbar gutter */
+    min-height: max(100lvh, 100dvh, calc(var(--vh, 1vh) * 100));
     z-index: -1;
     background-color: var(--bg);
     background-image: var(--page-bg-image);
     background-repeat: no-repeat;
+    background-position: center top;
     pointer-events: none;
+    transform: translateZ(0);
   }
 }
 
