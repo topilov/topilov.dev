@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>topilov.dev</title>
+    <meta name="description" content="Java/Kotlin Developer. Личная страница Topilov." />
+
+    <link rel="canonical" href="https://topilov.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="topilov.dev" />
+    <meta property="og:url" content="https://topilov.dev/" />
+    <meta property="og:title" content="topilov.dev" />
+    <meta property="og:description" content="Java/Kotlin Developer. Личная страница Topilov." />
+    <meta property="og:locale" content="ru_RU" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="topilov.dev" />
+    <meta name="twitter:description" content="Java/Kotlin Developer. Личная страница Topilov." />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="wrap">
+    <main class="hero">
+        <div class="hero-inner">
+            <h1 id="heroTitle"></h1>
+            <p class="hero-tagline">Java/Kotlin Developer</p>
+
+            <div class="btn-row">
+                <button class="btn" id="openContactsBtn" type="button">
+                    <i data-lucide="arrow-up-right"></i>
+                    <span>связаться</span>
+                </button>
+
+                <a class="btn-secondary" href="mailto:me@topilov.dev" aria-label="Написать на me@topilov.dev">
+                    <i data-lucide="mail"></i>
+                    <span>me@topilov.dev</span>
+                </a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="signature">topilov.dev · © 2026</div>
+
+<div class="modal" id="contactsModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contactsTitle">
+        <div class="modal-top">
+            <div class="modal-title" id="contactsTitle">контакты</div>
+
+            <button class="close-btn" id="closeModalBtn" type="button" aria-label="Закрыть">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <div class="contact-grid">
+            <a class="contact-link contact-link--github" href="https://github.com/topilov" target="_blank" aria-label="GitHub">
+                <i data-lucide="github"></i>
+                <span>github</span>
+            </a>
+
+            <a class="contact-link contact-link--gitlab" href="https://gitlab.com/topilov" target="_blank" aria-label="GitLab">
+                <i data-lucide="gitlab"></i>
+                <span>gitlab</span>
+            </a>
+
+            <a class="contact-link contact-link--telegram" href="https://t.me/syskernel" target="_blank" aria-label="Telegram">
+                <i data-lucide="send"></i>
+                <span>telegram</span>
+            </a>
+
+            <a class="contact-link contact-link--instagram" href="https://instagram.com/topilov.me" target="_blank" aria-label="Instagram">
+                <i data-lucide="instagram"></i>
+                <span>instagram</span>
+            </a>
+
+            <a class="contact-link contact-link--discord" href="https://discord.com/users/536403110453575710" target="_blank" aria-label="Discord">
+                <i data-lucide="messages-square"></i>
+                <span>discord</span>
+            </a>
+
+            <a class="contact-link contact-link--x" href="https://x.com/topilov.me" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <i data-lucide="twitter"></i>
+                <span>twitter</span>
+            </a>
+
+            <a class="contact-link contact-link--hh" href="https://hh.ru/resume/106b9b0fff0c47bd1e0039ed1f4c6d31784b57" target="_blank" rel="noopener noreferrer" aria-label="Резюме на HeadHunter">
+                <i data-lucide="briefcase"></i>
+                <span>hh</span>
+            </a>
+
+            <a class="contact-link contact-link--email" href="mailto:me@topilov.dev" aria-label="Email">
+                <i data-lucide="mail"></i>
+                <span>email</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
