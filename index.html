@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <!-- --bg2: Safari often tints the bottom bar; matches lower part of page gradient -->
     <meta name="theme-color" content="#0d0d10" />
-    <title>topilov.dev</title>
+    <title>topilov.dev — Backend engineer</title>
 
     <link rel="canonical" href="https://topilov.dev/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="topilov.dev" />
     <meta property="og:url" content="https://topilov.dev/" />
-    <meta property="og:title" content="topilov.dev" />
-    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="topilov.dev — Backend engineer" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="topilov.dev" />
+    <meta name="twitter:title" content="topilov.dev — Backend engineer" />
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -24,83 +24,140 @@
 </head>
 <body>
 <div class="wrap">
-    <main class="hero">
-        <div class="hero-inner">
-            <h1 id="heroTitle"></h1>
-            <p class="hero-tagline">Java/Kotlin Developer</p>
+    <div class="atmosphere" aria-hidden="true">
+        <span class="atmosphere-layer atmosphere-layer--amber"></span>
+        <span class="atmosphere-layer atmosphere-layer--lavender"></span>
+    </div>
+    <main class="page-main">
+        <section class="section section--hero hero" aria-labelledby="heroTitle">
+            <div class="hero-inner">
+                <h1 id="heroTitle">Alex Topilov</h1>
+                <p class="hero-tagline">Backend engineer</p>
+                <p class="hero-statement">I design and ship reliable APIs, services, and data paths—typed contracts, clear boundaries, and operable systems.</p>
 
-            <div class="btn-row">
-                <button class="btn" id="openContactsBtn" type="button">
-                    <i data-lucide="arrow-up-right"></i>
-                    <span>связаться</span>
-                </button>
+                <div class="btn-row">
+                    <a class="btn hero-cta--primary" href="#work">
+                        <i data-lucide="folder-git-2" aria-hidden="true"></i>
+                        <span>Selected work</span>
+                    </a>
 
-                <a class="btn-secondary" href="mailto:me@topilov.dev" aria-label="Написать на me@topilov.dev">
-                    <i data-lucide="mail"></i>
+                    <a class="btn-secondary hero-cta--secondary" href="#contact">
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section section--work" aria-labelledby="workHeading" data-revealed="false">
+            <h2 class="section-heading" id="workHeading">Selected Work</h2>
+
+            <div class="project-list panel">
+                <article class="project-card">
+                    <h3 class="project-card__title">Payments ledger API</h3>
+                    <p class="project-card__summary">Multi-region REST API for idempotent money movement with audit trails and reconciliation hooks.</p>
+                    <p class="project-card__role">Lead backend engineer</p>
+                    <p class="project-card__stack">Java 21, Spring Boot, PostgreSQL, Kafka</p>
+                    <a class="project-card__link" href="https://github.com/topilov" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-card__title">Realtime notification fan-out</h3>
+                    <p class="project-card__summary">Durable outbox and worker pool delivering millions of device events with backoff and DLQ inspection.</p>
+                    <p class="project-card__role">Backend engineer</p>
+                    <p class="project-card__stack">Kotlin, Ktor, Redis, RabbitMQ</p>
+                    <a class="project-card__link" href="#contact">Request case study</a>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-card__title">Telemetry ingestion pipeline</h3>
+                    <p class="project-card__summary">Batch and stream ingest with schema checks, partitioning, and replay for analytics consumers.</p>
+                    <p class="project-card__role">Backend engineer (data path)</p>
+                    <p class="project-card__stack">Python, Kafka, ClickHouse, Airflow</p>
+                    <a class="project-card__link" href="#contact">Ask for architecture notes</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="stack" class="section section--stack" aria-labelledby="stackHeading" data-revealed="false">
+            <h2 class="section-heading" id="stackHeading">Stack</h2>
+
+            <div class="stack-groups panel">
+                <div class="stack-group">
+                    <h3 class="stack-group__title">Languages</h3>
+                    <ul class="stack-group__list">
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="stack-group">
+                    <h3 class="stack-group__title">Frameworks</h3>
+                    <ul class="stack-group__list">
+                        <li>Spring Boot</li>
+                        <li>Ktor</li>
+                        <li>JUnit / Kotest</li>
+                    </ul>
+                </div>
+                <div class="stack-group">
+                    <h3 class="stack-group__title">Data and messaging</h3>
+                    <ul class="stack-group__list">
+                        <li>PostgreSQL</li>
+                        <li>Kafka</li>
+                        <li>RabbitMQ</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="stack-group">
+                    <h3 class="stack-group__title">Infrastructure and tooling</h3>
+                    <ul class="stack-group__list">
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>GitHub Actions</li>
+                        <li>Grafana / Prometheus</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section--contact" aria-labelledby="contactHeading" data-revealed="false">
+            <h2 class="contact-heading" id="contactHeading">Contact</h2>
+            <p class="contact-lead">Reach out directly—email, GitHub, or Telegram.</p>
+
+            <div class="contact-grid">
+                <a class="contact-link contact-link--email" href="mailto:me@topilov.dev" aria-label="Email me@topilov.dev">
+                    <i data-lucide="mail" aria-hidden="true"></i>
                     <span>me@topilov.dev</span>
                 </a>
+
+                <a class="contact-link contact-link--github" href="https://github.com/topilov" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                    <i data-lucide="github" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                </a>
+
+                <a class="contact-link contact-link--telegram" href="https://t.me/syskernel" target="_blank" rel="noopener noreferrer" aria-label="Telegram @syskernel">
+                    <i data-lucide="send" aria-hidden="true"></i>
+                    <span>Telegram</span>
+                </a>
             </div>
-        </div>
+        </section>
     </main>
 </div>
 
-<div class="signature">topilov.dev · © 2026</div>
+<footer class="signature">topilov.dev · © 2026</footer>
 
-<div class="modal" id="contactsModal" aria-hidden="true">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contactsTitle">
-        <div class="modal-top">
-            <div class="modal-title" id="contactsTitle">контакты</div>
-
-            <button class="close-btn" id="closeModalBtn" type="button" aria-label="Закрыть">
-                <i data-lucide="x"></i>
-            </button>
-        </div>
-
-        <div class="contact-grid">
-            <a class="contact-link contact-link--github" href="https://github.com/topilov" target="_blank" aria-label="GitHub">
-                <i data-lucide="github"></i>
-                <span>github</span>
-            </a>
-
-            <a class="contact-link contact-link--gitlab" href="https://gitlab.com/topilov" target="_blank" aria-label="GitLab">
-                <i data-lucide="gitlab"></i>
-                <span>gitlab</span>
-            </a>
-
-            <a class="contact-link contact-link--telegram" href="https://t.me/syskernel" target="_blank" aria-label="Telegram">
-                <i data-lucide="send"></i>
-                <span>telegram</span>
-            </a>
-
-            <a class="contact-link contact-link--instagram" href="https://instagram.com/topilov.me" target="_blank" aria-label="Instagram">
-                <i data-lucide="instagram"></i>
-                <span>instagram</span>
-            </a>
-
-            <a class="contact-link contact-link--discord" href="https://discord.com/users/536403110453575710" target="_blank" aria-label="Discord">
-                <i data-lucide="messages-square"></i>
-                <span>discord</span>
-            </a>
-
-            <a class="contact-link contact-link--x" href="https://x.com/topilov.me" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-                <i data-lucide="twitter"></i>
-                <span>twitter</span>
-            </a>
-
-            <a class="contact-link contact-link--hh" href="https://hh.ru/resume/106b9b0fff0c47bd1e0039ed1f4c6d31784b57" target="_blank" rel="noopener noreferrer" aria-label="Резюме на HeadHunter">
-                <i data-lucide="briefcase"></i>
-                <span>hh</span>
-            </a>
-
-            <a class="contact-link contact-link--email" href="mailto:me@topilov.dev" aria-label="Email">
-                <i data-lucide="mail"></i>
-                <span>email</span>
-            </a>
-        </div>
-    </div>
-</div>
+<noscript>
+    <style>
+        /* HTML keeps data-revealed="false" for scroll-reveal; without JS those sections stay invisible */
+        #work[data-revealed="false"],
+        #stack[data-revealed="false"],
+        #contact[data-revealed="false"] {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+    </style>
+</noscript>
 
 <script src="main.js"></script>
 </body>
